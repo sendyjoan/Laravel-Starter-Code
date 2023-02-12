@@ -13,22 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('admin.dashboard');
+Route::middleware(['auth'])->group(function (){
+    Route::get('/', function () {
+        // dd(auth()->user());
+        return view('admin.dashboard');
+    });
 });
-
-// Route::get('login', function () {
-//     return view('auth.login');
-// })->name('login');
-
-// Route::get('register', function () {
-//     return view('auth.register');
-// })->name('register');
-
-// Route::get('forget', function () {
-//     return view('auth.forget');
-// })->name('forget');
-
-// Route::get('reset', function () {
-//     return view('auth.reset');
-// })->name('reset');
