@@ -28,3 +28,7 @@ Route::get('register', function () {
 Route::get('forget', function () {
     return view('auth.forget');
 })->name('forget');
+
+Route::get('reset', function () {
+    return view('auth.reset');
+})->name('reset');
