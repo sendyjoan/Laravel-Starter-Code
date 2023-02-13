@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,4 +19,12 @@ Route::middleware(['auth', 'verified'])->group(function (){
         // dd(auth()->user());
         return view('admin.dashboard');
     });
+
+    Route::get('change-profile', function (Request $request) {
+        return view('admin.profile');
+    })->name('profile');
+
+    Route::get('change-password', function () {
+        return view('admin.password');
+    })->name('password');
 });
