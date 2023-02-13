@@ -18,4 +18,9 @@ Route::middleware(['auth', 'verified'])->group(function (){
         // dd(auth()->user());
         return view('admin.dashboard');
     });
+
+    Route::get('dashboard', function () {
+        // dd(auth()->user());
+        return view('admin.dashboard');
+    })->middleware('can:dasboard');
 });
